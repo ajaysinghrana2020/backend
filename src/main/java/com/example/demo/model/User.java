@@ -19,12 +19,12 @@ public class User {
     private String email;
     private String phone;
     private boolean enable = true;
-    private String profile ;
+    private String profile;
 
     // user many roles
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     @JsonIgnore
-    private Set<UserRole> userRoles=new HashSet<>();
+    private Set<UserRole> userRoles = new HashSet<>();
 
     public Set<UserRole> getUserRoles() {
         return userRoles;
@@ -105,7 +105,6 @@ public class User {
     public void setEnable(boolean enable) {
         this.enable = enable;
     }
-
 
 
     public User() {
